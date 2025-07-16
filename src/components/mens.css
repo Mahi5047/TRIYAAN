@@ -1,0 +1,87 @@
+.product-page {
+  padding: 30px;
+  background-color: #fdfaf6;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+.product-page h1 {
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 0 20px;
+}
+
+.product-card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 25px 15px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.add-to-cart {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background-color: #cc5200;
+}
+
+
+/* styles.css */
+.container {
+  padding: 20px;
+  font-size: 18px;
+}
+
+/* Small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* Medium devices (tablets, 600px - 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .container {
+    padding: 15px;
+    font-size: 16px;
+  }
+}
+
+/* Large devices (laptops/desktops, 901px and up) */
+@media (min-width: 901px) {
+  .container {
+    padding: 20px;
+    font-size: 18px;
+  }
+}
