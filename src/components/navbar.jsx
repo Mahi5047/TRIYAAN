@@ -4,6 +4,8 @@ import './navbar.css';
 
 function Navbar() {
   const [searchTerm, setSearchTerm] = useState('');
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [shopOpen, setShopOpen] = useState(false);
   const navigate = useNavigate();
   const loggedInUser = localStorage.getItem('triyaanLoggedInUser');
 
@@ -20,16 +22,28 @@ function Navbar() {
     navigate('/login');
   };
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const toggleShopDropdown = () => {
+    setShopOpen(!shopOpen);
+  };
+
   return (
     <nav className="navbar">
       <div className="logo">TRIYAAN</div>
 
-      <div className="nav-links">
+      <div className="hamburger" onClick={toggleMenu}>
+        ☰
+      </div>
+
+      <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
         <Link to="/">Home</Link>
 
-        <div className="nav-item">
-          <span><Link to="/products">Shop ▾</Link></span>
-          <div className="dropdown">
+        <div className="nav-item" onClick={toggleShopDropdown}>
+          <span className="shop-toggle">Shop ▾</span>
+          <div className={`dropdown ${shopOpen ? 'open' : ''}`}>
             <ul>
               <li><Link to="/products">All Products</Link></li>
               <li><Link to="/products/men">Men</Link></li>
